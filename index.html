@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CamberCraft — Independent Software &amp; Creative Studio</title>
+  <meta name="description" content="CamberCraft LLC is an independent software and creative studio based in Oregon. Makers of StudioScan, Long Player, and TrailDot.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #090b0e;
+      --card-bg: #12161f;
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-hover: rgba(255, 255, 255, 0.14);
+      --text: #f0f3f8;
+      --text-muted: #9ba3b4;
+      --accent: #38bdf8;
+      --accent-glow: rgba(56, 189, 248, 0.15);
+      --font: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      padding: 0 1.5rem;
+    }
+
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    /* Navigation */
+    header {
+      padding: 2.5rem 0 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 800;
+      font-size: 1.35rem;
+      letter-spacing: -0.5px;
+    }
+
+    .logo-badge {
+      width: 34px;
+      height: 34px;
+      border-radius: 9px;
+      background: linear-gradient(135deg, #38bdf8 0%, #6366f1 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 800;
+      font-size: 1.1rem;
+      box-shadow: 0 4px 16px rgba(56, 189, 248, 0.3);
+    }
+
+    nav {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--text);
+    }
+
+    /* Hero */
+    .hero {
+      padding: 6rem 0 4.5rem;
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 1rem;
+      border-radius: 9999px;
+      background: rgba(56, 189, 248, 0.08);
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      color: var(--accent);
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1.75rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 5vw, 3.8rem);
+      font-weight: 800;
+      letter-spacing: -1.5px;
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(180deg, #ffffff 30%, #94a3b8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      margin-bottom: 2.25rem;
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.85rem 1.6rem;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: #f8fafc;
+      color: #0f172a;
+    }
+
+    .btn-primary:hover {
+      background: #ffffff;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
+    }
+
+    .btn-secondary {
+      background: var(--card-bg);
+      color: var(--text);
+      border: 1px solid var(--card-border);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--card-hover);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    /* Section Title */
+    .section-header {
+      margin-bottom: 2.5rem;
+    }
+
+    .section-header h2 {
+      font-size: 1.85rem;
+      font-weight: 700;
+      letter-spacing: -0.7px;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-header p {
+      color: var(--text-muted);
+      font-size: 1rem;
+    }
+
+    /* App Cards Grid */
+    .apps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.75rem;
+      margin-bottom: 6rem;
+    }
+
+    .app-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 2.25rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .app-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--card-hover);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+    }
+
+    .app-icon-wrap {
+      width: 54px;
+      height: 54px;
+      border-radius: 14px;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.75rem;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.4);
+    }
+
+    .app-card.studioscan .app-icon-wrap {
+      background: linear-gradient(135deg, #10b981, #06b6d4);
+    }
+
+    .app-card.longplayer .app-icon-wrap {
+      background: linear-gradient(135deg, #f59e0b, #ef4444);
+    }
+
+    .app-card.traildot .app-icon-wrap {
+      background: linear-gradient(135deg, #3b82f6, #6366f1);
+    }
+
+    .app-card h3 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: -0.4px;
+      margin-bottom: 0.35rem;
+    }
+
+    .app-tagline {
+      font-size: 0.88rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .app-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .app-features {
+      list-style: none;
+      margin-bottom: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .app-features li {
+      font-size: 0.88rem;
+      color: #cbd5e1;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .app-features li::before {
+      content: "✓";
+      color: var(--accent);
+      font-weight: bold;
+    }
+
+    .app-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--card-border);
+      padding-top: 1.25rem;
+      margin-top: auto;
+    }
+
+    .app-status {
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      background: rgba(255, 255, 255, 0.05);
+      color: #94a3b8;
+    }
+
+    .app-status.live {
+      background: rgba(16, 185, 129, 0.15);
+      color: #34d399;
+    }
+
+    .app-link {
+      font-size: 0.88rem;
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .app-link:hover {
+      color: var(--accent);
+    }
+
+    /* Privacy & Philosophy Callout */
+    .philosophy {
+      background: linear-gradient(135deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.7) 100%);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 3rem;
+      margin-bottom: 6rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    @media (max-width: 768px) {
+      .philosophy {
+        grid-template-columns: 1fr;
+        padding: 2rem;
+      }
+    }
+
+    .philosophy h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 1rem;
+    }
+
+    .philosophy p {
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+    }
+
+    /* Support Section */
+    .support-section {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 3rem;
+      text-align: center;
+      margin-bottom: 6rem;
+    }
+
+    .support-section h2 {
+      font-size: 1.85rem;
+      font-weight: 700;
+      letter-spacing: -0.6px;
+      margin-bottom: 0.75rem;
+    }
+
+    .support-section p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+    }
+
+    .contact-email {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent);
+      text-decoration: none;
+      padding: 1rem 2rem;
+      border-radius: 12px;
+      background: rgba(56, 189, 248, 0.08);
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      transition: all 0.2s;
+    }
+
+    .contact-email:hover {
+      background: rgba(56, 189, 248, 0.16);
+      transform: translateY(-2px);
+    }
+
+    /* Footer */
+    footer {
+      padding: 3rem 0 4rem;
+      border-top: 1px solid var(--card-border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.75rem;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: var(--text);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <a href="#" class="logo">
+        <div class="logo-badge">C</div>
+        <span>CamberCraft</span>
+      </a>
+      <nav>
+        <a href="#apps">Apps</a>
+        <a href="#about">Studio</a>
+        <a href="#support">Support</a>
+        <a href="https://mattcflynn.github.io/privacy/">Privacy</a>
+      </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="badge-pill">Independent Software &amp; Creative Studio</div>
+      <h1>Focused tools crafted with precision.</h1>
+      <p>
+        CamberCraft is an independent engineering and publishing studio based in the Pacific Northwest. We build native iOS utilities, games, and creative media built on privacy, offline reliability, and zero cloud lock-in.
+      </p>
+      <div class="hero-actions">
+        <a href="#apps" class="btn btn-primary">Explore Our Software</a>
+        <a href="#support" class="btn btn-secondary">Get Support</a>
+      </div>
+    </section>
+
+    <!-- Apps Section -->
+    <section id="apps">
+      <div class="section-header">
+        <h2>Native Applications</h2>
+        <p>Purpose-built software designed to run completely on your device.</p>
+      </div>
+
+      <div class="apps-grid">
+        <!-- StudioScan -->
+        <div class="app-card studioscan">
+          <div>
+            <div class="app-icon-wrap">🎨</div>
+            <div class="app-tagline">Color &amp; Art Capture</div>
+            <h3>StudioScan</h3>
+            <p>
+              Professional artwork scanning for artists and printmakers. Captures lossless uncompressed PNGs with calibrated physical DPI and true color profile preservation.
+            </p>
+            <ul class="app-features">
+              <li>Lossless sRGB color accuracy</li>
+              <li>Reference card white-balance calibration</li>
+              <li>Embedded DPI metadata for physical prints</li>
+              <li>100% offline — zero cloud uploads</li>
+            </ul>
+          </div>
+          <div class="app-footer">
+            <span class="app-status live">Available Soon</span>
+            <a href="https://mattcflynn.github.io/privacy/studioscan/" class="app-link">Privacy Policy &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Long Player -->
+        <div class="app-card longplayer">
+          <div>
+            <div class="app-icon-wrap">🎵</div>
+            <div class="app-tagline">Music Catalog &amp; Rankings</div>
+            <h3>Long Player</h3>
+            <p>
+              The record collector’s companion for Apple Music. Browse your complete albums, filter out singles, and build personal year-by-year rankings that sync via CloudKit.
+            </p>
+            <ul class="app-features">
+              <li>Full LP filtering &amp; chronological sorting</li>
+              <li>Interactive fractional ranking engine</li>
+              <li>Private multi-device CloudKit sync</li>
+              <li>Zero tracking &amp; zero analytics</li>
+            </ul>
+          </div>
+          <div class="app-footer">
+            <span class="app-status">Coming Soon</span>
+            <a href="https://mattcflynn.github.io/privacy/long-player/" class="app-link">Privacy Policy &rarr;</a>
+          </div>
+        </div>
+
+        <!-- TrailDot -->
+        <div class="app-card traildot">
+          <div>
+            <div class="app-icon-wrap">📍</div>
+            <div class="app-tagline">Offline GeoPDF Navigation</div>
+            <h3>TrailDot</h3>
+            <p>
+              A live blue dot on any paper map. Import park brochures, topographic PDFs, or trailhead photos and georeference your live location completely offline.
+            </p>
+            <ul class="app-features">
+              <li>Embedded GeoPDF auto-calibration</li>
+              <li>2-point manual tie-point alignment</li>
+              <li>Full offline GPS navigation in backcountry</li>
+              <li>Location data never leaves your device</li>
+            </ul>
+          </div>
+          <div class="app-footer">
+            <span class="app-status">In Development</span>
+            <a href="https://mattcflynn.github.io/privacy/traildot/" class="app-link">Privacy Policy &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Philosophy -->
+    <section class="philosophy" id="about">
+      <div>
+        <h2>Zero Tracking.<br>Zero Cloud Middlemen.</h2>
+        <p>
+          We believe personal software should respect your attention and your data. None of our applications include tracking SDKs, advertising beacons, or third-party analytics.
+        </p>
+        <p>
+          Your artwork stays on your camera roll. Your music rankings stay in your private iCloud. Your backcountry trail locations stay on your phone.
+        </p>
+      </div>
+      <div>
+        <h2>The CamberCraft Studio</h2>
+        <p>
+          Formed in Oregon, CamberCraft LLC is the umbrella for our family's digital and creative works—ranging from specialized iOS software utilities to indie tabletop games, webtoons, and print media.
+        </p>
+        <p>
+          Every project is built with care, designed for longevity, and released with transparent, one-time pricing rather than predatory subscriptions.
+        </p>
+      </div>
+    </section>
+
+    <!-- Support Section -->
+    <section class="support-section" id="support">
+      <h2>App Support &amp; Direct Contact</h2>
+      <p>
+        Have a question about an app, found an issue, or need help with a purchase? We read and reply to every message personally.
+      </p>
+      <a href="mailto:support@cambercraft.com" class="contact-email">
+        <span>✉</span> support@cambercraft.com
+      </a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div>
+        <strong>CamberCraft LLC</strong> &bull; Portland, Oregon &bull; &copy; 2026 All rights reserved.
+      </div>
+      <div class="footer-links">
+        <a href="#apps">Apps</a>
+        <a href="#support">Support</a>
+        <a href="https://mattcflynn.github.io/privacy/">Privacy Policies</a>
+      </div>
+    </footer>
+  </div>
+
+</body>
+</html>
