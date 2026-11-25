@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>StudioScan — Artwork Scanner for iPhone</title>
+<meta name="description" content="A scanner for drawings, paintings and comics up to letter size. It corrects the camera, never the artwork, and tells you every change it made.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../privacy/shared.css">
+<style>
+  .table-scroll { overflow-x: auto; margin: 0 0 1.5rem; border: 1px solid var(--card-border); border-radius: 10px; }
+  table { border-collapse: collapse; width: 100%; min-width: 40rem; font-size: 0.9rem; }
+  th, td { text-align: left; vertical-align: top; padding: 0.6rem 0.75rem; border-bottom: 1px solid var(--card-border); color: var(--text-muted); }
+  thead th { color: var(--text); font-weight: 700; background: var(--card-bg); }
+  tbody th { color: var(--text); font-weight: 600; width: 30%; }
+  td.us, thead th.us { color: var(--text); background: var(--accent-glow); }
+  tr.loses th, tr.loses td { font-style: italic; }
+  tr:last-child th, tr:last-child td { border-bottom: none; }
+  .note { font-size: 0.88rem; color: var(--text-faint); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="site-header">
+    <a href="https://cambercraft.com" class="logo">CamberCraft</a>
+    <nav class="nav-links">
+      <a href="https://cambercraft.com#apps">Apps</a>
+      <a href="https://cambercraft.com#support">Support</a>
+    </nav>
+  </header>
+
+  <p class="eyebrow">For iPhone</p>
+  <h1>StudioScan</h1>
+  <p class="lede">A scanner for drawings, paintings and comics up to letter size. <strong>It corrects the camera, never the artwork,</strong> and tells you every change it made.</p>
+
+  <h2>Why not just use the camera?</h2>
+  <p>Your camera app is built to make photos look good. It sharpens, brightens the shadows and blends several frames. That flatters a snapshot and changes a copy. StudioScan does the opposite. It corrects what the camera and the light got wrong, leaves the artwork alone, and lists every change it made.</p>
+
+  <h2>What it does</h2>
+  <ul>
+    <li><strong>Helps you take the shot.</strong> A level shows when the phone is parallel to the work, the shutter waits until your hand is steady, and the app warns you when the light is uneven.</li>
+    <li><strong>Crops and straightens.</strong> It finds the edges of the artwork and squares it up.</li>
+    <li><strong>Fixes the camera, not the art.</strong> White is set from the paper and the lens's dark corners are removed. No sharpening, no filters, no AI.</li>
+    <li><strong>Records the real size.</strong> Type the width of the piece and the file carries its true DPI, so it opens and prints at the size of the original.</li>
+    <li><strong>Scans pages.</strong> Shoot a whole comic or sketchbook in one session and export it as a PDF, a CBZ for comic readers, or a multi-page TIFF.</li>
+  </ul>
+
+  <h2>The files</h2>
+  <ul>
+    <li><strong>The scan:</strong> a lossless 16-bit PNG in Display P3 wide color, to keep and to edit.</li>
+    <li><strong>The DNG:</strong> exactly what the sensor recorded, kept beside every scan.</li>
+    <li><strong>A JPEG when you share,</strong> for shops, social and email.</li>
+  </ul>
+
+  <h2>How it compares</h2>
+  <p>Including the rows StudioScan loses, which are in italics.</p>
+  <div class="table-scroll">
+    <table>
+      <thead>
+        <tr><th></th><th class="us">StudioScan</th><th>iPhone Camera</th><th>Notes scanner</th><th>Flatbed scanner</th></tr>
+      </thead>
+      <tbody>
+        <tr><th>Made for</th><td class="us">Artwork</td><td>Photos</td><td>Documents</td><td>Anything flat</td></tr>
+        <tr><th>Crops to the piece and straightens</th><td class="us">Yes</td><td>By hand, in Photos</td><td>Yes</td><td>By hand</td></tr>
+        <tr><th>Help holding the phone parallel</th><td class="us">Yes</td><td>No</td><td>No</td><td>Not needed</td></tr>
+        <tr><th>Warns about uneven light</th><td class="us">Yes</td><td>No</td><td>No</td><td>Not needed</td></tr>
+        <tr><th>Real size and DPI in the file</th><td class="us">Yes</td><td>No</td><td>No</td><td>Yes</td></tr>
+        <tr><th>Sharpening, tone mapping, filters</th><td class="us">None</td><td>Always on</td><td>On</td><td>Optional</td></tr>
+        <tr><th>Says what it changed</th><td class="us">Yes, in the file</td><td>No</td><td>No</td><td>No</td></tr>
+        <tr><th>Keeps the sensor's recording (DNG)</th><td class="us">Always</td><td>ProRAW on Pro phones, already processed</td><td>No</td><td>No</td></tr>
+        <tr><th>Lossless 16-bit wide-color file</th><td class="us">Yes</td><td>No (HEIC or JPEG)</td><td>No (PDF)</td><td>With the right software</td></tr>
+        <tr><th>Multi-page PDF</th><td class="us">Yes</td><td>No</td><td>Yes</td><td>With software</td></tr>
+        <tr><th>Comic archive (CBZ)</th><td class="us">Yes</td><td>No</td><td>No</td><td>No</td></tr>
+        <tr class="loses"><th>Text recognition</th><td class="us">No</td><td>Yes</td><td>Yes</td><td>With software</td></tr>
+        <tr class="loses"><th>Resolution on a letter page</th><td class="us">About 176 DPI</td><td>About 350 to 500 DPI</td><td>About 200 DPI</td><td>300 to 1200+ DPI</td></tr>
+        <tr class="loses"><th>Looks good with no effort</th><td class="us">No</td><td>Yes</td><td>Yes, for documents</td><td>Depends</td></tr>
+        <tr class="loses"><th>Largest work</th><td class="us">Letter (8.5 × 11 in)</td><td>Any</td><td>Any</td><td>The size of the bed</td></tr>
+        <tr><th>Price</th><td class="us">Free to try, then one small payment</td><td>Free</td><td>Free</td><td>The hardware</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="note">Resolution for the phone apps is for a letter page filling the frame on an iPhone 16 Pro's main camera. The Camera figure is the arithmetic for its 12 and 24 megapixel modes; the Notes figure was measured on one scan.</p>
+
+  <h2>What it is not</h2>
+  <ul>
+    <li>It is not a document scanner. There is no text recognition.</li>
+    <li>It is for work up to letter size. A filled frame gives about 176 DPI in a 3 megapixel file: plenty for screens and small prints, and less than a flatbed.</li>
+    <li>It will not make your artwork look better than it is. That part is yours.</li>
+  </ul>
+
+  <h2>Private, and fairly priced</h2>
+  <p>No account, no ads, no tracking, and your scans never leave your phone. Your first ten scans are free, then three a month. One payment unlocks unlimited scans. No subscription.</p>
+  <p><a href="/privacy/studioscan/">Privacy policy</a> &middot; <a href="https://cambercraft.com#support">Support</a></p>
+
+  <footer>
+    <p>&copy; 2026 CamberCraft LLC &bull; Portland, Oregon</p>
+    <p><a href="https://cambercraft.com">cambercraft.com</a></p>
+  </footer>
+</div>
+</body>
+</html>
