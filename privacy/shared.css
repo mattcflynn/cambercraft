@@ -37,6 +37,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
   padding-bottom: 2rem;
   margin-bottom: 3rem;
   border-bottom: 1px solid var(--card-border);
@@ -52,7 +54,8 @@ body {
 
 .nav-links {
   display: flex;
-  gap: 1.25rem;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
 }
 
 .nav-links a {
